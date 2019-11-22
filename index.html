@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Better Professor</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="css/index.css">
       <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap"
             rel="stylesheet">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,13 +14,14 @@
       <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
       <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
       <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+      <script src="less/index.less" tyle="test/javascript"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="index.js"></script>
 
 <body>
 
       <a name="home"></a>
       <div class="wrapper">
-
-            <!--------------- hero section starts here --------------->
 
             <div class="video-container">
                   <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
@@ -30,10 +31,6 @@
             <div class="header">
                   <h1>Time to get organized</h1>
             </div>
-
-            <!--------------- hero section ends here --------------->
-
-            <!--------------- navbar starts here --------------->
 
             <nav class="nav">
                   <span id="brand">
@@ -66,11 +63,7 @@
                   </ul>
             </div>
 
-            <!--------------- navbar ends here --------------->
-
             <div class="content">
-
-                  <!--------------- about section starts here --------------->
 
                   <a name="about"></a>
 
@@ -119,10 +112,6 @@
                         </div>
 
                   </section>
-
-                  <!--------------- about section ends here --------------->
-
-                  <!--------------- services section starts here --------------->
 
                   <a name="services"></a>
 
@@ -186,10 +175,6 @@
                         </div>
 
                   </section>
-
-                  <!--------------- services section ends here --------------->
-
-                  <!--------------- team section starts here --------------->
 
                   <a name="team"></a>
 
@@ -430,74 +415,7 @@
 
             </div>
 
-      </div>
-
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <script>
-
-            // navigation starts here
-            $("#toggle").click(function () {
-                  $(this).toggleClass('on');
-                  $("#resize").toggleClass("active");
-            });
-            $("#resize ul li a").click(function () {
-                  $(this).toggleClass('on');
-                  $("#resize").toggleClass("active");
-            });
-            $(".close-btn").click(function () {
-                  $(this).toggleClass('on');
-                  $("#resize").toggleClass("active");
-            });
-
-            $(function () {
-                  $(document).scroll(function () {
-                        var $nav = $(".nav");
-                        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-                  });
-            });
-
-            new WOW().init();
-
-            // Select all links with hashes
-            $('a[href*="#"]')
-                  // Remove links that don't actually link to anything
-                  .not('[href="#"]')
-                  .not('[href="#0"]')
-                  .click(function (event) {
-                        // On-page links
-                        if (
-                              location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                              &&
-                              location.hostname == this.hostname
-                        ) {
-                              // Figure out element to scroll to
-                              var target = $(this.hash);
-                              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                              // Does a scroll target exist?
-                              if (target.length) {
-                                    // Only prevent default if animation is actually gonna happen
-                                    event.preventDefault();
-                                    $('html, body').animate({
-                                          scrollTop: target.offset().top
-                                    }, 1000, function () {
-                                          // Callback after animation
-                                          // Must change focus!
-                                          var $target = $(target);
-                                          $target.focus();
-                                          if ($target.is(":focus")) { // Checking if the target was focused
-                                                return false;
-                                          } else {
-                                                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                                                $target.focus(); // Set focus again
-                                          };
-                                    });
-                              }
-                        }
-                  });
-
-
-      </script>
+      </div>      
 </body>
 
 </html>
